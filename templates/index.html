@@ -1,0 +1,123 @@
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Projeto Ciranda</title>
+
+     <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.12.0/css/semantic.min.css">
+    <link rel="javascript" type="text/javascript" href="../static/js/gen_validation.js" />
+    <link rel="stylesheet" href="../static/css/bjqs.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../static/css/demo.css">
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="../static/js/bjqs-1.3.min.js"></script>
+
+</head>
+<body>
+
+<div id="box-toggle">
+<div class="tgl">
+
+    <form>
+
+        <div class="ui form segment">
+  <div class="field">
+    <label>Username</label>
+    <div class="ui left labeled icon input">
+      <input type="text" placeholder="Username">
+      <i class="user icon"></i>
+      <div class="ui corner label">
+        <i class="icon asterisk"></i>
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label>Password</label>
+    <div class="ui left labeled icon input">
+      <input type="password">
+      <i class="lock icon"></i>
+      <div class="ui corner label">
+        <i class="icon asterisk"></i>
+      </div>
+    </div>
+  </div>
+  <div class="ui error message">
+    <div class="header">We noticed some issues</div>
+  </div>
+  <div class="ui red submit button">Login</div>
+</div>
+
+
+    </form>>
+</div>
+
+<script type="text/javascript">
+jQuery.fn.toggleText = function(a,b) {
+return   this.html(this.html().replace(new RegExp("("+a+"|"+b+")"),function(x){return(x==a)?b:a;}));
+}
+
+$(document).ready(function(){
+$('.tgl').before('<span>Entrar</span>');
+$('.tgl').css('display', 'none')
+$('span', '#box-toggle').click(function() {
+$(this).next().slideToggle('slow')
+.siblings('.tgl:visible').slideToggle('fast');
+// aqui começa o funcionamento do plugin
+$(this).toggleText('Entrar','Fechar')
+.siblings('span').next('.tgl:visible').prev()
+.toggleText('Entrar','Fechar')
+});
+})
+</script>
+
+
+
+
+<div align="center">
+ <li><img src="../static/img/logo.jpg"  width=350 height=350   title=""></li>
+</div>
+    <div class="ui red inverted menu">
+  <a href="/" class="item">
+    <i class="home icon"></i> Inicio
+  </a></div>
+  <div class="ui teal inverted menu">>
+  <a href="/projeto" class="item"></i> O Projeto
+  </a></div>
+  <div class="ui blue inverted menu">
+  <a href="/adote" class="item"></i> Adote uma Criança
+  </a></div>
+  <div class="ui orange inverted menu">
+  <div id="faleconosco">
+      <a href="/faleconosco" class="active item">
+    <i class="user icon"></i> Fale Conosco
+  </a></div>
+
+</div>
+
+<div id="banner-fade">
+
+        <!-- start Basic Jquery Slider -->
+        <ul class="bjqs">
+          <li><img src="../static/img/crianca1.jpg" title="Venha Fazer Parte da AACDO"></li>
+          <li><img src="../static/img/crianca2.jpg" title="Toda Criança tem o Direito de Ser Feliz"></li>
+          <li><img src="../static/img/crianca3.jpg" title=""></li>
+        </ul>
+        <!-- end Basic jQuery Slider -->
+
+      </div>
+
+  <script class="secret-source">
+        jQuery(document).ready(function($) {
+
+          $('#banner-fade').bjqs({
+            height      : 320,
+            width       : 620,
+            responsive  : true
+          });
+
+        });
+      </script>
+
+
+</body>
+</html>
